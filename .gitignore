@@ -1,6 +1,9 @@
 # Large OnlyOffice bundle + x2t WASM — served from gh-pages, never committed to main
 /assets/
 
+# Internal planning docs — kept local, not tracked
+/docs/
+
 # Build / deploy output
 **/dist/
 /build/
