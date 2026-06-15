@@ -2,6 +2,13 @@
 
 Demo apps for [wasm-onlyoffice-sdk](https://github.com/oonxt/wasm-onlyoffice-sdk) — an offline OnlyOffice document editor SDK for React and Vue, powered by WebAssembly.
 
+## Live Demo
+
+Hosted on GitHub Pages:
+
+- React: https://oonxt.github.io/wasm-onlyoffice-demo/
+- Vue: https://oonxt.github.io/wasm-onlyoffice-demo/vue/
+
 ## SDK
 
 | | |
@@ -46,3 +53,16 @@ npm run dev
 - Open local file via file picker
 - Theme switching (light, dark, night, etc.)
 - Save / Download (via browser download)
+
+## Deployment
+
+The live site is published to the `gh-pages` branch by `deploy.sh`, which builds
+both apps, assembles the shared OnlyOffice asset tree plus x2t, and force-pushes
+an orphan branch. The OnlyOffice bundle (`assets/`, ~1.2 GB) is **not** committed
+to the repo — it must exist in the local working tree when deploying, and the
+in-editor `help/` docs are stripped during assembly to stay under the GitHub
+Pages 1 GB site limit.
+
+```bash
+./deploy.sh
+```
