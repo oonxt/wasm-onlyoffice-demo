@@ -1,0 +1,12 @@
+# Large OnlyOffice bundle + x2t WASM — served from gh-pages, never committed to main
+/assets/
+
+# Build / deploy output
+**/dist/
+/build/
+
+# Dependencies
+**/node_modules/
+
+# OS / editor cruft
+.DS_Store

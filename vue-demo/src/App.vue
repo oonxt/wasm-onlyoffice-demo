@@ -3,8 +3,11 @@ import { ref } from 'vue'
 import { OnlyOfficeEditor } from 'wasm-onlyoffice-sdk/vue'
 import type { OfficeTheme } from 'wasm-onlyoffice-sdk'
 
-const ASSETS_PATH = '/v9.3.0.24-1'
-const X2T_PATH = 'https://example.com/x2t'
+// VITE_OO_BASE is injected at build time (e.g. "/wasm-onlyoffice-demo" on GitHub
+// Pages, "" for local dev). The OnlyOffice asset tree and x2t live at the site root.
+const OO_BASE = import.meta.env.VITE_OO_BASE ?? ''
+const ASSETS_PATH = `${OO_BASE}/v9.3.0.24-1`
+const X2T_PATH = `${OO_BASE}/x2t`
 
 type DocType = 'docx' | 'xlsx' | 'pptx'
 
