@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLYOFFICE עברי - דמו</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background: #446995;
+            color: white;
+            padding: 15px 20px;
+            text-align: right;
+            direction: rtl;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .editor-container {
+            flex: 1;
+            border: none;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .instructions {
+            background: #f5f5f5;
+            padding: 20px;
+            direction: rtl;
+            text-align: right;
+        }
+        .instructions ul {
+            text-align: right;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 עורך מסמכים ONLYOFFICE בעברית</h1>
+        </div>
+        
+        <div class="editor-container">
+            <!-- שימו לב לפרמטר lang=he שמפעיל עברית ו-RTL -->
+            <iframe 
+                id="onlyoffice-editor"
+                src="public/v9.3.0.24-1/web-apps/apps/documenteditor/main/index.html?lang=he&isClose=true"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // פונקציה לעדכון השפה דינמית
+        function setLanguage(lang) {
+            const iframe = document.getElementById('onlyoffice-editor');
+            const currentSrc = iframe.src.split('?')[0];
+            iframe.src = `${currentSrc}?lang=${lang}&isClose=true`;
+        }
+
+        // הודעה למשתמש
+        console.log('ONLYOFFICE בעברית נטען בהצלחה!');
+        console.log('כדי לשנות שפה, השתמשו בפרמטר lang ב-URL:');
+        console.log('- עברית: ?lang=he');
+        console.log('- אנגלית: ?lang=en');
+        console.log('- ערבית: ?lang=ar');
+        console.log('- רוסית: ?lang=ru');
+    </script>
+</body>
+</html>
